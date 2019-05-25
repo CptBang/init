@@ -1,0 +1,5 @@
+#Name the command that determines the state of the SSH service
+#need to search and install
+#apt search ssh-server
+#apt install openssh-server 
+service sshd status | grep Active

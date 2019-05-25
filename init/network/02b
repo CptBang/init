@@ -1,0 +1,2 @@
+#identify all IP addresses which are part of the same subnet
+arp -a | awk '{print $2}'

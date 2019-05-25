@@ -1,0 +1,3 @@
+#Find the provider of slash16.org
+#Used whois website to find contact information. Find the registrar section using whois. Used grep to make it more readable.
+whois slash16.org | grep Registrar

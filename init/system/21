@@ -1,0 +1,5 @@
+#List all real users on the VM
+#human users start at 1000
+#cut -d: -f1,3 /etc/passwd | egrep ':[0-9]{4}$' | cut -d: -f1 displays in all cases
+#getent passwd {1000.60000} | awk -F: '{print $1}'
+cat /etc/passwd | grep '\home' | cut -d: -f1

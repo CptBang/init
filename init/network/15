@@ -1,0 +1,3 @@
+#Make the intra.42.fr address reroute to 46.19.122.85
+#Can't do it because file is read only, but below code would append it to the end of the file
+echo "46.19.122.85 intra.42.fr" >> /etc/hosts

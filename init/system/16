@@ -1,0 +1,7 @@
+#Find the service which make it possible to run specific tasks following a regular schedule
+#install at using apt-get install at
+#systemctl enable --now atd.service to start atd daemon
+#at now + <time> to run however much time from no
+#at 4pm + 3 days to run command at 4pm 3 days from now
+#
+#service is called cron, and crontab can set times for cron to execute

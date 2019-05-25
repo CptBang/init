@@ -1,0 +1,2 @@
+#What file has to be modified to make it permanent?
+#/etc/hosts has to be modified (currently potato, previously debian)

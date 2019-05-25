@@ -1,0 +1,3 @@
+#Get the complete path of the file that contains the IP address of the DNS server you're using
+#resolv.conf contains the IP address uses to resolve hostnames. The hosts file is used for backend and internal purposes.
+cat /etc/resolv.conf

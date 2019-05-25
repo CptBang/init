@@ -1,0 +1,57 @@
+#Three's a Charm. Write a script of you choice.
+#Twitter bot for Yellow Brick Road
+#!/usr/bin/env python3
+import tweepy
+import random
+import time
+import datetime
+from datetime import datetime
+
+consumer_key = 'PFBunDBjRu9kAKInroVn7y6Bh'
+consumer_secret = 'Cm1Emz1J6t7bLIUUW9cnNdc8VkUNuCKLSBHISj6RaYyh0DoLOE'
+access_token = '1078792323130023936-bunLE7MPGGsYPT64KFOuDjlVwyq3hf'
+access_token_secret = 'tr4GaGODTvHSMEByETIpqTCEW0amNMKZzohOedt8uKaTQ'
+
+auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
+
+user = api.me()
+print (user.name)
+
+search = "@42SiliconValley"
+numberOfTweets = 2
+
+random_tWeet = ("Getting on dat coding grind", 
+"Eat Sleep Code Repeat", 
+"@villa_bryan Let's go climb!!!", 
+"https://bit.ly/2QJRvHA"
+)
+
+now = datetime.now()
+time = now.strftime("%H:%M")
+
+def mainFunction():
+	for follower in tweepy.Cursor(api.followers).items():
+		follower.follow()
+	for tweet in tweepy.Cursor(api.search, search).items(numberOfTweets):
+		try:
+			tweet.retweet()
+			tweet.favorite()
+			print('Retweeted and Favorited the Tweet')
+
+		except tweepy.TweepError as e:
+			print(e.reason)
+	try:
+		tWeet = raw_input("Tweet?  ")
+		if tWeet != "random":
+			api.update_status(tWeet)
+		else:
+			api.update_status(random.choice(random_tWeet) + "   " + time)
+		print("Updated Status")
+
+	except tweepy.TweepError as e:
+		print(e.reason)
+
+
+mainFunction()

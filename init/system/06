@@ -1,0 +1,2 @@
+#Name the command that reboots the SSh service
+systemctl restart sshd
